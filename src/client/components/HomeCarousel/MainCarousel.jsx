@@ -25,7 +25,7 @@ const MainCarousel = () => {
         responsive={{ 0: { items: 1 } }}
         controlsStrategy="responsive"
         disableButtonsControls
-        disableDotsControls
+        //disableDotsControls
       />
 
       {/* Custom Previous Button */}
