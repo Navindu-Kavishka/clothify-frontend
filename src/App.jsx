@@ -3,6 +3,7 @@
 // import viteLogo from '/vite.svg'
 //import './App.css'
 import NavBar from './client/components/NavBar/NavBar'
+import Home from './client/pages/Home/Home'
 
 function App() {
 
@@ -10,6 +11,9 @@ function App() {
     <>
       <div>
         <NavBar/>
+        <div>
+          <Home/>
+        </div>
       </div>
     </>
   )
