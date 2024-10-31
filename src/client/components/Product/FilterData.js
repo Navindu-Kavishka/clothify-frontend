@@ -29,9 +29,9 @@ export const filters = [
         id: "size",
         name: "Size",
         options: [
-            { value: "S", label: "S" },
-            { value: "M", label: "M" },
-            { value: "L", label: "L" },
+            { value: "S", label: "Small" },
+            { value: "M", label: "Medium" },
+            { value: "L", label: "Large" },
         ],
     },
 
