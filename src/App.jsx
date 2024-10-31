@@ -2,8 +2,10 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 //import './App.css'
+import Footer from './client/components/Footer/Footer'
 import NavBar from './client/components/NavBar/NavBar'
-import Home from './client/pages/Home/Home'
+import Product from './client/components/Product/Product'
+//import Home from './client/pages/Home/Home'
 
 function App() {
 
@@ -12,8 +14,10 @@ function App() {
       <div>
         <NavBar/>
         <div>
-          <Home/>
+          {/* <Home/> */}
+          <Product/>
         </div>
+        <Footer/>
       </div>
     </>
   )
