@@ -1,12 +1,31 @@
-import { Grid, Button } from "@mui/material"
+import { Grid, Button, Box, TextField } from "@mui/material"
 import AddressCard from "../AddressCard/AddressCard"
 
 
 const DeliveryAddressForm = () => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+
+    const details = {
+      firstName: data.get('firstName'),
+      lastName: data.get('lastName'),
+      address: data.get('address'),
+      city: data.get('city'),
+      state: data.get('state'),
+      zipCode: data.get('zipCode'),
+      phoneNumber: data.get('phoneNumber'),
+    }
+    console.log("details : ",details);
+    
+  }
+
+
   return (
     <div>
       <Grid container spacing={4}>
-        <Grid className="border rounded-e-md shadow-md h-[30,5rem] overflow-y-scroll">
+        <Grid xs={12} lg={5} className="border rounded-e-md shadow-md h-[30,5rem] overflow-y-scroll">
 
           <div className="p-5 py-7 border-b cursor-pointer">
             <AddressCard/>
@@ -16,6 +35,102 @@ const DeliveryAddressForm = () => {
           </div>
           
         </Grid>
+
+        <Grid item xs={12} lg={7}>
+
+          <Box className="border rounded-e-md shadow-md p-5">
+
+            <form onSubmit={handleSubmit}>
+
+              <Grid container spacing={3}>
+
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    id="firstName"
+                    name="firstName"
+                    label="First Name"
+                    fullWidth
+                    autoComplete="given-name"
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    id="lastName"
+                    name="lastName"
+                    label="Last Name"
+                    fullWidth
+                    autoComplete="given-last-name"
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <TextField
+                    id="address"
+                    name="address"
+                    label="Address"
+                    fullWidth
+                    autoComplete="given-address"
+                    multiline
+                    rows={4}
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    id="city"
+                    name="city"
+                    label="City"
+                    fullWidth
+                    autoComplete="given-city"
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    id="state"
+                    name="state"
+                    label="State/Province/Region"
+                    fullWidth
+                    autoComplete="given-state"
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    id="zipCode"
+                    name="zipCode"
+                    label="Zip / Postal code"
+                    fullWidth
+                    autoComplete="shipping postal-code"
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    label="Phone Number"
+                    fullWidth
+                    autoComplete="given-phone"
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
+                  <Button sx={{ mt: 2, bgcolor: "#9155fd" }} variant="contained" type="submit">
+                    Deliver to this address
+                  </Button>
+                </Grid>
+
+              </Grid>
+
+              
+            </form>
+
+          </Box>
+
+        </Grid>
+
       </Grid>
     </div>
   )
