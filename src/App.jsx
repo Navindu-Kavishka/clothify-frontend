@@ -3,9 +3,10 @@
 // import viteLogo from '/vite.svg'
 //import './App.css'
 //import Cart from './client/components/Cart/Cart'
-import Checkout from './client/components/Checkout/Checkout'
+//import Checkout from './client/components/Checkout/Checkout'
 import Footer from './client/components/Footer/Footer'
 import NavBar from './client/components/NavBar/NavBar'
+import Order from './client/components/Order/Order'
 //import Product from './client/components/Product/Product'
 //import ProductDetails from './client/components/ProductDetails/ProductDetails'
 //import Home from './client/pages/Home/Home'
@@ -21,7 +22,8 @@ function App() {
           {/* <Product/> */}
           {/* <ProductDetails/> */}
           {/* <Cart/> */}
-          <Checkout/>
+          {/* <Checkout/> */}
+          <Order/>
         </div>
         <Footer/>
       </div>
