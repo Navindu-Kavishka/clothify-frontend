@@ -7,6 +7,7 @@
 import Footer from './client/components/Footer/Footer'
 import NavBar from './client/components/NavBar/NavBar'
 import Order from './client/components/Order/Order'
+import OrderDetails from './client/components/Order/OrderDetails'
 //import Product from './client/components/Product/Product'
 //import ProductDetails from './client/components/ProductDetails/ProductDetails'
 //import Home from './client/pages/Home/Home'
@@ -23,7 +24,8 @@ function App() {
           {/* <ProductDetails/> */}
           {/* <Cart/> */}
           {/* <Checkout/> */}
-          <Order/>
+          {/* <Order/> */}
+          <OrderDetails/>
         </div>
         <Footer/>
       </div>
