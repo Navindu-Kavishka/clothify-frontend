@@ -23,7 +23,7 @@ import ProductCard from './ProductCard'
 import { filters, singleFilter } from './FilterData'
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material'
 import FilterIcon from '@mui/icons-material/FilterList';
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 const sortOptions = [
   { name: 'Price: Low to High', href: '#', current: false },
@@ -33,6 +33,7 @@ const sortOptions = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+
 
 export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)

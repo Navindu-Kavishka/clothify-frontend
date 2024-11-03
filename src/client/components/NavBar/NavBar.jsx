@@ -1,3 +1,5 @@
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-unused-vars */
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
@@ -10,17 +12,21 @@ import {
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import { navigation } from "./navigationData";
+import { useNavigate } from "react-router-dom";
 
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navigation() {
+export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
+  const jwt = localStorage.getItem("jwt");
 
 
 
@@ -39,7 +45,7 @@ export default function Navigation() {
   };
 
   const handleCategoryClick = (category, section, item, close) => {
-    // navigate(`/${category.id}/${section.id}/${item.id}`);
+    navigate(`/${category.id}/${section.id}/${item.id}`);
     close();
   };
 
@@ -148,7 +154,7 @@ export default function Navigation() {
                             >
                               {section.name}
                             </p>
-                            {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+                            
                             <ul
                               role="list"
                               aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
@@ -410,7 +416,8 @@ export default function Navigation() {
                           "aria-labelledby": "basic-button",
                         }}
                       >
-                        <MenuItem >
+                        <MenuItem >Profile</MenuItem>
+                        <MenuItem onClick={() => navigate("/account/order")}>
                           My Orders
                         </MenuItem>
                         <MenuItem >Logout</MenuItem>

@@ -1,8 +1,15 @@
 import { Button } from "@mui/material"
 import CartItem from "./CartItem"
+import { useNavigate } from "react-router-dom";
 
 
 const Cart = () => {
+    const navgate = useNavigate();
+
+    const handleCheckout = () => {
+        navgate('/checkout?step=2')
+    }
+    
   return (
     <div>
 
@@ -35,7 +42,7 @@ const Cart = () => {
                             <span>LKR 4500</span>
                         </div>
                     </div>
-                    <Button variant='contained' className="w-full mt-5" sx={{px:'2.5rem',py:'0.7rem',bgcolor:'#9155fd'}}>
+                    <Button onClick={handleCheckout} variant='contained' className="w-full mt-5" sx={{px:'2.5rem',py:'0.7rem',bgcolor:'#9155fd'}}>
                          Checkout
                     </Button>
                 </div>

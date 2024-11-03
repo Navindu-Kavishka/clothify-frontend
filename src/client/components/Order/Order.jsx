@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { Grid } from "@mui/material"
-import OrderCart from "./OrderCart"
+import OrderCard from "./OrderCard"
 
 
 const orderStatus = [
@@ -46,7 +46,7 @@ const Order = () => {
 
                 <Grid item xs={9}>
 
-                    <div className="space-y-5">{[1,1,1].map((item)=><OrderCart/>)}</div>
+                    <div className="space-y-5">{[1,1,1].map((item)=><OrderCard/>)}</div>
                     
                 </Grid>
 
