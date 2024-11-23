@@ -22,6 +22,10 @@ const ClientRouters = () => {
         </div>
 
         <Routes>
+          <Route path="/login" element={<HomePage />} />
+          <Route path="/register" element={<HomePage />} />
+
+
             <Route path="/" element={<HomePage />} ></Route>
             <Route path="/cart" element={<Cart/>} ></Route>
             <Route path="/:lavelOne/:lavelTwo/:lavelThree" element={<Product/>} ></Route>
