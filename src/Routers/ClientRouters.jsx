@@ -1,16 +1,16 @@
 
 import { Route, Routes } from "react-router-dom"
-import NavBar from "../components/NavBar/NavBar"
+import NavBar from "../client/components/NavBar/NavBar"
 
-import Footer from "../components/Footer/Footer"
+import Footer from "../client/components/Footer/Footer"
 
-import Cart from "../components/Cart/Cart"
-import Product from "../components/Product/Product"
-import ProductDetails from "../components/ProductDetails/ProductDetails"
-import HomePage from "../pages/HomePage/HomePage"
-import Checkout from "../components/Checkout/Checkout"
-import Order from "../components/Order/Order"
-import OrderDetails from "../components/Order/OrderDetails"
+import Cart from "../client/components/Cart/Cart"
+import Product from "../client/components/Product/Product"
+import ProductDetails from "../client/components/ProductDetails/ProductDetails"
+import HomePage from "../client/pages/HomePage/HomePage"
+import Checkout from "../client/components/Checkout/Checkout"
+import Order from "../client/components/Order/Order"
+import OrderDetails from "../client/components/Order/OrderDetails"
 
 const ClientRouters = () => {
   return (
