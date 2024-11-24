@@ -1,10 +1,27 @@
+/* eslint-disable react/prop-types */
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import IconButton from '@mui/material/IconButton'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Button from '@mui/material/Button'
+import { useDispatch } from 'react-redux';
+import { removeCartItem, updateCartItem } from '../../../State/Cart/Action';
+
 
 
 const CartItem = ({item}) => {
+
+    const dispatch = useDispatch();
+
+
+    const handleUpdateCartItem = (num) => {
+        const data = {data:{quantity:item.quantity+num},cartItemId:item.id}
+        dispatch(updateCartItem(data))
+    }
+
+    const handleRemoveCartItem = () => {
+        dispatch(removeCartItem(item.id))
+    }
+
     return (
         <div className="p-5 shadow-lg border rounded-md">
 
@@ -32,12 +49,12 @@ const CartItem = ({item}) => {
             <div className='lg:flex items-center lg:space-x-10 pt-4'>
 
                     <div className='flex items-center space-x-2'>
-                        <IconButton sx={{color:'#9155fd'}} aria-label="">
+                        <IconButton onClick={()=>handleUpdateCartItem(-1) } disabled={item.quantity<=1} sx={{color:'#9155fd'}} aria-label="">
                             <RemoveCircleOutlineIcon/>
                         </IconButton>
 
                         <span className='py-1 px-7 border rounded-sm'>{item.quantity}</span>
-                            <IconButton sx={{color:'#9155fd'}} aria-label="">
+                            <IconButton onClick={()=>handleUpdateCartItem(1) } sx={{color:'#9155fd'}} aria-label="">
                               <AddCircleOutlineIcon/>
                             </IconButton>
                         
@@ -45,7 +62,7 @@ const CartItem = ({item}) => {
                     </div>
 
                     <div>
-                        <Button variant="text" color="error">
+                        <Button onClick={handleRemoveCartItem} sx={{color:"RGB(145 85 253)"}}>
                           Remove
                         </Button>
                     </div>
