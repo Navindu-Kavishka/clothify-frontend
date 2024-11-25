@@ -113,7 +113,7 @@ export default function Product() {
       minDiscount:discount || 0,
       sort:sortValue || 'price-low',
       pageNumber:pageNumber - 1,
-      pageSize: 1,
+      pageSize: 10,
       stock:stock
 
     }
