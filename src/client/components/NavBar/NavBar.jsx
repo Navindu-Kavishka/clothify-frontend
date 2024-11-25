@@ -250,7 +250,7 @@ export default function NavBar() {
 
       <header className="relative bg-white">
         <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
+          Get free delivery on this Month
         </p>
 
         <nav aria-label="Top" className="mx-auto">
@@ -268,7 +268,7 @@ export default function NavBar() {
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
                 
-                  <span className="sr-only">Your Company</span>
+                  <span className="sr-only">Clothify Fashion</span>
                   <img
                     src=""
                     alt="clothify logo"
