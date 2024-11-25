@@ -16,6 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import AuthModal from "../../auth/AuthModal";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, logout } from "../../../State/Auth/Action";
+import logo from "../../../../src/assets/img/clothify-logo.png";
 
 
 function classNames(...classes) {
@@ -270,7 +271,7 @@ export default function NavBar() {
                 
                   <span className="sr-only">Clothify Fashion</span>
                   <img
-                    src=""
+                    src={logo}
                     alt="clothify logo"
                     className="h-8 w-8 mr-2"
                   />
