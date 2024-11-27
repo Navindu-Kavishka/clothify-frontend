@@ -12,6 +12,8 @@ import Checkout from "../client/components/Checkout/Checkout"
 import Order from "../client/components/Order/Order"
 import OrderDetails from "../client/components/Order/OrderDetails"
 import PaymentSuccess from "../client/components/Payment/PaymentSuccess"
+import StripePayment from "../client/components/Payment/StripePayment"
+import PaymentCancelled from "../client/components/Payment/PaymentCancelled"
 
 const ClientRouters = () => {
   return (
@@ -35,6 +37,9 @@ const ClientRouters = () => {
             <Route path="/account/order" element={<Order/>} ></Route>
             <Route path="/account/order/:orderId" element={<OrderDetails/>} ></Route>
             <Route path="/payment/:orderId" element={<PaymentSuccess/>} ></Route>
+            <Route path="/payment/process/:orderId" element={<StripePayment/>} />
+            <Route path="/payment/cancel" element={<PaymentCancelled/>} />
+            
             
 
 
