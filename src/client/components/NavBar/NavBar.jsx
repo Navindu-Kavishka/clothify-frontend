@@ -267,7 +267,7 @@ export default function NavBar() {
               </button>
 
               {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
+              <div className="ml-4 flex lg:ml-0 cursor-pointer" onClick={() => navigate('/')}>
                 
                   <span className="sr-only">Clothify Fashion</span>
                   <img
@@ -480,7 +480,8 @@ export default function NavBar() {
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
                   <Button
-                    className="group -m-2 flex items-center p-2"
+                  onClick={() => navigate('/cart')}
+                    className="group -m-2 flex items-center p-2 transition-all duration-200 hover:scale-110"
                   >
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
