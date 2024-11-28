@@ -34,6 +34,7 @@ export default function NavBar() {
   const {auth} = useSelector(store => store);
   const dispatch = useDispatch();
   const location = useLocation();
+  const {cart} = useSelector(store => store);
 
 
 
@@ -488,7 +489,7 @@ export default function NavBar() {
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      2
+                      {cart.cart?.cartItemEntities?.length || 0}
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Button>
